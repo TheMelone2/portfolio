@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Header from '../components/Header.astro';
+
+const frontendskills = [
+  { name: 'HTML', color: '#ff3300' },
+  { name: 'CSS', color: '#2071fe' },
+  { name: 'JavaScript', color: '#fff700' },
+  { name: 'React', color: '#61DBFB' },
+  { name: 'Bootstrap', color: '#7952B3' },
+  { name: 'Sass', color: '#CD6799' }
+];
+
+const backendskills = [
+  { name: 'Node.js', color: '#68A063' },
+  { name: 'Express.js', color: '#eee' },
+  { name: 'MongoDB', color: '#47A248' },
+  { name: 'SQL', color: '#FFD700' },
+  { name: 'GraphQL', color: '#E10098' },
+  { name: 'REST', color: '#FF5733' }
+];
+
+const techskills = [
+  { name: 'Git', color: '#F34F29' },
+  { name: 'GitHub', color: '#181717' },
+  { name: 'VS Code', color: '#007ACC' },
+  { name: 'Heroku', color: '#430098' },
+  { name: 'Netlify', color: '#00C7B7' },
+  { name: 'Vercel', color: '#000000' }
+];
+
+const otherskills = [
+  { name: 'Figma', color: '#F24E1E' },
+  { name: 'Adobe XD', color: '#FF61F6' },
+  { name: 'Photoshop', color: '#31A8FF' },
+  { name: 'Illustrator', color: '#FF9A00' },
+  { name: 'After Effects', color: '#D291FF' },
+  { name: 'Premiere Pro', color: '#EA77FF' }
+];
+---
+
+<Layout title="the.melon's portfolio">
+  <Header />
+  <br>
+  <main>
+    <h1>Welcome to <span class="text-gradient">Jan Luca</span></h1>
+    <ul role="list" class="link-card-grid">
+      <Card
+        title="Frontend Skills:"
+        skills={frontendskills}
+      />
+      <Card
+        title="Backend Skills:"
+		skills={backendskills}
+      />
+      <Card
+        title="Tech Skills:"
+		skills={techskills}
+      />
+      <Card
+        title="Other Skills:"
+		skills={otherskills}
+      />
+    </ul>
+  </main>
+</Layout>
+
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.astro-a {
+		position: absolute;
+		top: -32px;
+		left: 50%;
+		transform: translatex(-50%);
+		width: 220px;
+		height: auto;
+		z-index: -1;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+	}
+</style>
