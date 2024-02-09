@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Header from '../components/Header.astro';
+import Projects from '../components/Projects.astro';
 
 const frontendskills = [
   { name: 'HTML', color: '#ff3300' },
@@ -38,13 +39,185 @@ const otherskills = [
   { name: 'After Effects', color: '#D291FF' },
   { name: 'Premiere Pro', color: '#EA77FF' }
 ];
+
+
+const projects = [
+	{
+		projectname: "EasyThreads Website",
+		projectdescription: "I create sd jasd ",
+		technologies: [
+			{ name: "HTML", color: "#ff3300" },
+			{ name: "CSS", color: "#2071fe"},
+			{ name: "JavaScript", color: "#fff700" },
+			{ name: "React", color: "#61DBFB" }
+		],
+		projecttags: [
+			{ name: "web development"},
+			{ name: "frontend"}
+		],
+		projectpreview: "https://example.com/project1-preview",
+		projectlinks: {
+			github: "https://github.com/example/project1",
+			live: "https://example.com/project1-live"
+		}
+	},
+	{
+		projectname: "Sample Project 2",
+		projectdescription: "This is another sample project description.",
+		technologies: [
+			{ name: "React"},
+			{ name: "Node.js"},
+			{ name: "MongoDB"}
+		],
+		projecttags: [
+			{ name: "web development" },
+			{ name: "full stack"}
+		],
+		projectpreview: "https://example.com/project2-preview",
+		projectlinks: {
+			github: "https://github.com/example/project2",
+			live: "https://example.com/project2-live"
+		}
+	}
+];
+	
+
 ---
 
 <Layout title="the.melon's portfolio">
   <Header />
   <br>
   <main>
-    <h1>Welcome to <span class="text-gradient">Jan Luca</span></h1>
+	<div class="introduction">
+		<h1 id="name">Hey! I'm<br><span class="text-gradient">Jan Luca</span></h1>
+		<br>
+		<p id="typewriter"><i class="fa fa-arrow-right"></i> <span class="welcome-text"></span> <i class="fa fa-arrow-left"></i></p>
+		<script>
+			// Cool typewriter effect
+			const words = ["Welcome to my portfolio!", "I'm a web developer from Germany.", "I'm a Web Designer.", "I'm a Product Tester."];
+			let i = 0;
+			let j = 0;
+			let currentWord = 0;
+			let currentText = "";
+			let isDeleting = false;
+			let isEnd = false;
+			function typeWriter() {
+				if (i < words.length) {
+					if (isDeleting && currentText.length === 0) {
+						isDeleting = false;
+						currentWord++;
+						if (currentWord === words.length) {
+							currentWord = 0;
+						}
+					}
+					if (isDeleting) {
+						currentText = words[currentWord].substring(0, currentText.length - 1);
+					} else {
+						currentText = words[currentWord].substring(0, currentText.length + 1);
+					}
+					document.querySelector('.welcome-text').innerHTML = currentText;
+					let speed = 100;
+					if (isDeleting) {
+						speed /= 2;
+					}
+					if (currentText === words[currentWord] && !isDeleting) {
+						speed = 2000;
+						isDeleting = true;
+					}
+					if (currentText === "" && isDeleting) {
+						isEnd = true;
+						isDeleting = false;
+						currentWord++;
+						if (currentWord === words.length) {
+							currentWord = 0;
+						}
+					}
+					setTimeout(typeWriter, speed);
+				}
+			}
+			typeWriter();
+		</script>
+		<nav class="nav-icons">
+			<a href="https://www.linkedin.com/in/jan-luca-heise-197563286/" target="_blank" id="linkedin"><i class="fab fa-linkedin"></i></a>
+			<a href="https://github.com/TheMelone2" id="github"><i class="fab fa-github"></i></a>
+			<a href="https://discord.com/channels/@me/1002706682910093394" id="discord"><i class="fab fa-discord"></i></a>
+		</nav>
+		<style>
+			.introduction {
+				text-align: center;
+				margin-bottom: 10rem;
+			}
+			#typewriter {
+				font-size: 2.5rem;
+				margin-top: 1rem;
+			}
+			.nav-icons {
+				display: flex;
+				justify-content: center;
+				margin-top: 1rem;
+			}
+			.nav-icons a {
+				font-size: 2rem;
+				margin: 0 0.5rem;
+				color: white;
+			}
+			.nav-icons a {
+				color: #fff;
+				font-size: 2em;
+				margin: 0 0.5em;
+				text-decoration: none;
+				border-radius: 50%;
+				height: 2em;
+				width: 2em;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.nav-icons #discord:hover {
+				color: #5865F2;
+				transform: scale(1.1);
+				transition: all ease-in-out 0.2s;
+				background-color: #fff;
+			}
+			.nav-icons #github:hover {
+				background-color: #fff;
+				color: #000000;
+				transform: scale(1.1);
+				transition: all ease-in-out 0.2s;
+			}
+			.nav-icons #linkedin:hover {
+				color: #0A66C2;                
+				background-color: #fff;
+				transform: scale(1.1);
+				transition: all ease-in-out 0.2s;
+			}
+			.nav-icons #linkedin {
+				transition: all ease-out 0.4s;
+			}
+			.nav-icons #github {
+				transition: all ease-out 0.4s;
+			}
+			.nav-icons #discord {
+				transition: all ease-out 0.4s;
+			}
+
+			@keyframes ease-out {
+				0% {
+					transform: scale(1);
+				}
+				100% {
+					transform: scale(1.1);
+				}
+				
+			}
+		</style>
+	</div>
+	<h4>About me:</h4>
+	<p>
+		I'm a ?? year old web developer from Germany. If you want to work with me, feel free to contact me.
+	</p>
+	<hr>
+	<br>
     <ul role="list" class="link-card-grid">
       <Card
         title="Frontend Skills:"
@@ -63,11 +236,28 @@ const otherskills = [
 		skills={otherskills}
       />
     </ul>
+	<h2>Used in many projects... like:</h2>
+    <div class="projects">
+        {projects.map((project) => (
+            <Projects
+				projectname={project.projectname}
+				projectdescription={project.projectdescription}
+				technologies={project.technologies}
+				projecttags={project.projecttags}
+				projectpreview={project.projectpreview}
+				projectlinks={project.projectlinks}
+				></Projects>
+        ))}
+    </div>
+	
   </main>
 </Layout>
 
 
 <style>
+	:root {
+		scroll-behavior: smooth;
+	}
 	main {
 		margin: auto;
 		padding: 1rem;
@@ -87,18 +277,47 @@ const otherskills = [
 		z-index: -1;
 	}
 	h1 {
-		font-size: 4rem;
-		font-weight: 700;
+		font-size: 5rem;
 		line-height: 1;
 		text-align: center;
 		margin-bottom: 1em;
+		font-weight: 400;
 	}
+
+	h1#name {
+		display: inline-block;
+		position: relative;
+		text-decoration: none;
+    }
+    h1#name::after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		transform: scaleX(0);
+		border-radius: 5px;
+		height: 0.05em;
+		bottom: 0;
+		left: 0;
+		background: currentcolor;
+		transform-origin: bottom right;
+		transition: transform 0.25s ease-out;
+    }
+    h1#name:hover::after {
+		transform: scaleX(1);
+		transform-origin: bottom left;
+    }
+	h1#name:hover {
+		cursor: pointer;
+	}   
 	.text-gradient {
 		background-image: var(--accent-gradient);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-size: 400%;
 		background-position: 0%;
+		font-size: 8rem;
+		font-weight: 700;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.116);
 	}
 
 	.link-card-grid {
