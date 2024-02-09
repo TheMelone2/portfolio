@@ -1,0 +1,182 @@
+---
+interface Props {
+        projectname: string;
+        projectdescription: string;
+        technologies: { name: string; icon: string, color: string }[];
+        projecttags: { name: string}[];
+        projectpreview: string;
+        projectlinks: {
+            github: string;
+            live: string;
+        };  
+}
+
+const { projectname, projectdescription, technologies, projecttags, projectpreview, projectlinks } = Astro.props;
+
+function getIconClass(tagName: string) {
+  switch (tagName) {
+    case 'web development':
+        return 'fas fa-globe';
+    case 'mobile development':
+        return 'fas fa-mobile-alt';
+    case 'full stack':
+        return 'fas fa-server';
+    case 'front end':
+        return 'fas fa-desktop';
+    case 'back end':
+        return 'fas fa-cogs';
+    case 'design':
+        return 'fas fa-palette';
+    case 'game development':
+        return 'fas fa-gamepad';
+    case 'data science':
+        return 'fas fa-chart-line';
+    default :
+        return 'fas fa-code';
+
+  }
+}
+
+function getIconClass2(technologyName) {
+  switch (technologyName) {
+    case 'HTML':
+      return 'fab fa-html5';
+    case 'CSS':
+      return 'fab fa-css3-alt';
+    case 'JavaScript':
+      return 'fab fa-js';
+    case 'React':
+      return 'fab fa-react';
+    case 'Bootstrap':
+      return 'fab fa-bootstrap';
+    case 'Sass':
+      return 'fab fa-sass';
+	case 'Node.js':
+		return 'fab fa-node-js';
+	case 'Express.js':
+		return 'fas fa-server';
+	case 'MongoDB':
+		return 'fas fa-database';
+	case 'Git':
+		return 'fab fa-git-alt';
+    default:
+      return '';
+  }
+}
+---
+
+<div class="project">
+    <h2>{projectname}</h2>
+    <hr>
+    <div class="project-short-infos">
+        <div class="project-tags">
+            <ul>
+                {projecttags.map((tag) => (
+                    <li>
+                        <p> <i class={getIconClass(tag.name)}></i> {tag.name}</p>
+                    </li>
+                ))}
+            </ul>
+        </div>
+        <div class="project-preview">
+            <img src={projectpreview} alt={projectname} />
+        </div>
+    </div>
+    <br>
+    <div class="project-description">
+        <p>{projectdescription}</p>
+        <button class="readall" onclick={`readall(${projectname})`}>Read all</button>
+    </div>
+    <div class="project-technologies">
+        <ul>
+            {technologies.map((technology) => (
+                <li>
+                    <p><i class={getIconClass2(technology.name)} style={{ color: technology.color }}></i> {technology.name}</p>
+                </li>
+            ))}
+        </ul>
+    </div>
+    <hr>
+    <div class="project-links">
+        <a href={projectlinks.github} target="_blank" rel="noopener noreferrer">
+            <i class="fa fa-github"></i> View on GitHub 
+        </a>
+        <a href={projectlinks.live} target="_blank" rel="noopener noreferrer">
+            Live Preview <i class="fa fa-arrow-up-right-from-square"></i>
+        </a>
+    </div>
+
+</div>
+
+<style>
+    .project {
+        margin: 2rem 0;
+        padding: 1rem;
+        border: 1px solid #eaeaea;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .project h2 {
+        margin-bottom: 1rem;
+        color: #333;
+    }
+
+    .project-short-infos {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .project-tags ul {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .project-tags ul li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .project-preview img {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 10px;
+    }
+
+    .project-description {
+        margin: 1rem 0;
+        color: #555;
+    }
+
+    .project-technologies ul {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .project-technologies ul li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .project-links {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+    }
+
+    .project-links a img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .fa-github {
+        color: #333;
+    }
+
+    .fa-arrow-up-right-from-square {
+        color: #333;
+    }
+</style>
