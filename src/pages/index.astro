@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Header from '../components/Header.astro';
 import Projects from '../components/Projects.astro';
+import projectdata from '../_data/projects.json';
 
 const frontendskills = [
   { name: 'HTML', color: '#ff3300' },
@@ -40,47 +41,8 @@ const otherskills = [
   { name: 'Premiere Pro', color: '#EA77FF' }
 ];
 
-
-const projects = [
-	{
-		projectname: "EasyThreads Website",
-		projectdescription: "I create sd jasd ",
-		technologies: [
-			{ name: "HTML", color: "#ff3300" },
-			{ name: "CSS", color: "#2071fe"},
-			{ name: "JavaScript", color: "#fff700" },
-			{ name: "React", color: "#61DBFB" }
-		],
-		projecttags: [
-			{ name: "web development"},
-			{ name: "frontend"}
-		],
-		projectpreview: "https://example.com/project1-preview",
-		projectlinks: {
-			github: "https://github.com/example/project1",
-			live: "https://example.com/project1-live"
-		}
-	},
-	{
-		projectname: "Sample Project 2",
-		projectdescription: "This is another sample project description.",
-		technologies: [
-			{ name: "React"},
-			{ name: "Node.js"},
-			{ name: "MongoDB"}
-		],
-		projecttags: [
-			{ name: "web development" },
-			{ name: "full stack"}
-		],
-		projectpreview: "https://example.com/project2-preview",
-		projectlinks: {
-			github: "https://github.com/example/project2",
-			live: "https://example.com/project2-live"
-		}
-	}
-];
 	
+const projects = projectdata;
 
 ---
 
@@ -138,7 +100,7 @@ const projects = [
 			typeWriter();
 		</script>
 		<nav class="nav-icons">
-			<a href="https://www.linkedin.com/in/jan-luca-heise-197563286/" target="_blank" id="linkedin"><i class="fab fa-linkedin"></i></a>
+			<a href="https://www.linkedin.com/in/janlucaheise/" target="_blank" id="linkedin"><i class="fab fa-linkedin"></i></a>
 			<a href="https://github.com/TheMelone2" id="github"><i class="fab fa-github"></i></a>
 			<a href="https://discord.com/channels/@me/1002706682910093394" id="discord"><i class="fab fa-discord"></i></a>
 		</nav>
