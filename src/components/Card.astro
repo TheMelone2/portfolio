@@ -82,11 +82,12 @@ function getIconClass(skillName) {
 		margin-top: 0.5rem;
 		margin-bottom: 0;
 	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
+	.link-card li:is(:hover, :focus-within) {
+		color: rgb(var(--accent-light));
+		cursor: pointer;
 	}
 	.link-card:is(:hover, :focus-within) h2 {
 		color: rgb(var(--accent-light));
-	}
+		cursor: default;
+	} 
 </style>
