@@ -1,45 +1,46 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Guestbook from '../components/Guestbook.astro';
+import Projects from '../components/Projects.astro';
 import Card from '../components/Card.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import Projects from '../components/Projects.astro';
 import projectdata from '../_data/projects.json';
 
 const filteredProjects = projectdata.filter(project => project.published);
 
 
 const frontendskills = [
-  { name: 'HTML', color: '#ff3300' },
-  { name: 'CSS', color: '#2071fe' },
-  { name: 'JavaScript', color: '#fff700' },
-  { name: 'React', color: '#61DBFB' },
-  { name: 'Bootstrap', color: '#7952B3' },
-  { name: 'Tailwind CSS', color: '#06B6D4' },
-  { name: 'Next.js', color: '#eee' },
-  { name: 'Astro', color: '#FF3E00'},
+	{ name: 'HTML', color: '#ff3300'},
+	{ name: 'CSS', color: '#2071fe'},
+	{ name: 'JavaScript', color: '#fff700'},
+	{ name: 'React', color: '#61DBFB', link: 'https://react.dev' },
+	{ name: 'Bootstrap', color: '#7952B3', link: 'https://getbootstrap.com' },
+	{ name: 'Tailwind CSS', color: '#06B6D4', link: 'https://tailwindcss.com' },
+	{ name: 'Next.js', color: '#eee', link: 'https://nextjs.org' },
+	{ name: 'Astro', color: '#FF3E00', link: 'https://astro.build'},
 ];
 
 const backendskills = [
-  { name: 'Node.js', color: '#68A063' },
-  { name: 'Express.js', color: '#eee' },
-  { name: 'MongoDB', color: '#47A248' },
-  { name: 'MySQL', color: '#FFD700' },
-  { name: 'REST', color: '#FF5733' }
+	{ name: 'Node.js', color: '#68A063', link: 'https://nodejs.org' },
+	{ name: 'Express.js', color: '#eee', link: 'https://expressjs.com' },
+	{ name: 'MongoDB', color: '#47A248', link: 'https://www.mongodb.com' },
+	{ name: 'MySQL', color: '#FFD700', link: 'https://www.mysql.com' },
+	{ name: 'REST', color: '#FF5733' },
 ];
 
 const techskills = [
-  { name: 'Git', color: '#F34F29' },
-  { name: 'GitHub', color: '#eee' },
-  { name: 'VS Code', color: '#007ACC' },
-  { name: 'Netlify', color: '#00C7B7' },
+	{ name: 'Git', color: '#F34F29', link: 'https://git-scm.com' },
+	{ name: 'GitHub', color: '#eee', link: 'https://github.com' },
+	{ name: 'VS Code', color: '#007ACC', link: 'https://code.visualstudio.com' },
+	{ name: 'Netlify', color: '#00C7B7', link: 'https://www.netlify.com' },
 ];
 
 const otherskills = [
-  { name: 'Figma', color: '#F24E1E' },
-  { name: 'Video Editing', color: '#FF5733' },
-  { name: 'SEO', color: '#47A248' },
-  { name: 'Google Firebase', color: '#FFA000' }
+	{ name: 'Figma', color: '#F24E1E', link: 'https://www.figma.com' },
+	{ name: 'Video Editing', color: '#FF5733' },
+	{ name: 'SEO', color: '#47A248' },
+	{ name: 'Google Firebase', color: '#FFA000', link: 'https://firebase.google.com' }
 ];
 
 	
@@ -52,12 +53,12 @@ const projects = filteredProjects;
   <br>
   <main>
 	<div class="introduction">
-		<h1 id="name">Hey! I'm<br><span class="text-gradient">Jan Luca</span></h1>
+		<h1 id="name">Hey! I'm<br><span class="text-gradient">the.melon</span></h1>
 		<br>
 		<p id="typewriter"><i class="fa fa-arrow-right"></i> <span class="welcome-text"></span> <i class="fa fa-arrow-left"></i></p>
 		<script>
 			// Cool typewriter effect
-			const words = ["Welcome to my portfolio!", "I'm a web developer from Germany.", "I'm a Web Designer.", "I'm a Product Tester."];
+			const words = ["Welcome to my portfolio!", "I'm a web developer from Germany.", "I'm a Web Designer.", "I'm a Product Tester.", "I'm a melon? :O"];
 			let i = 0;
 			let j = 0;
 			let currentWord = 0;
@@ -101,83 +102,28 @@ const projects = filteredProjects;
 			typeWriter();
 		</script>
 		<nav class="nav-icons">
-			<a href="https://www.linkedin.com/in/janlucaheise/" target="_blank" id="linkedin"><i class="fab fa-linkedin"></i></a>
 			<a href="https://github.com/TheMelone2" id="github"><i class="fab fa-github"></i></a>
-			<a href="https://discord.com/channels/@me/1002706682910093394" id="discord"><i class="fab fa-discord"></i></a>
+			<a href="https://discord.com/users/687316434480922664" id="discord"><i class="fab fa-discord"></i></a>
+			<a href="mailto:melon@easysystems.live" id="email"><i class="fa fa-envelope"></i></a>			
 		</nav>
-		<style>
-			.introduction {
-				text-align: center;
-				margin-bottom: 10rem;
-			}
-			#typewriter {
-				font-size: 2.5rem;
-				margin-top: 1rem;
-			}
-			.nav-icons {
-				display: flex;
-				justify-content: center;
-				margin-top: 1rem;
-			}
-			.nav-icons a {
-				font-size: 2rem;
-				margin: 0 0.5rem;
-				color: white;
-			}
-			.nav-icons a {
-				color: #fff;
-				font-size: 2em;
-				margin: 0 0.5em;
-				text-decoration: none;
-				border-radius: 50%;
-				height: 2em;
-				width: 2em;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
-			.nav-icons #discord:hover {
-				color: #5865F2;
-				transform: scale(1.1);
-				transition: all ease-in-out 0.2s;
-				background-color: #fff;
-			}
-			.nav-icons #github:hover {
-				background-color: #fff;
-				color: #000000;
-				transform: scale(1.1);
-				transition: all ease-in-out 0.2s;
-			}
-			.nav-icons #linkedin:hover {
-				color: #0A66C2;                
-				background-color: #fff;
-				transform: scale(1.1);
-				transition: all ease-in-out 0.2s;
-			}
-			.nav-icons #linkedin {
-				transition: all ease-out 0.4s;
-			}
-			.nav-icons #github {
-				transition: all ease-out 0.4s;
-			}
-			.nav-icons #discord {
-				transition: all ease-out 0.4s;
-			}
-
-			@keyframes ease-out {
-				0% {
-					transform: scale(1);
-				}
-				100% {
-					transform: scale(1.1);
-				}
-				
-			}
-		</style>
 	</div>
 	<h4 id="aboutme">About me:</h4>
-	<p>
-		I'm a ?? year old web developer from Germany. If you want to work with me, feel free to contact me.
+	<p id="abt-text">
+		Heya!
+		<br>
+		I'm a web developer based in Germany. I'm currently working on a few projects and learning new things every day. I'm always open to new ideas and projects, so feel free to contact me if you have any questions or want to work with me.
+		<br>
+		<br>
+		Currently I'm working on <b><a href="https://easysystems.live">EasySystems</a></b> a german company that make Discord Apps (formerly known as "bots"). <br>At EasySystems I'm responsible for many tasks for example the legal things, the communication between the team and the customers / users and much more like managing & developing the EasyThreads Website and the EasyThreads Docs.
+		<br>
+		<br>
+		Besides that I'm part of the Lab Assistant and the <a href="https://discord.com/wumpus-feedback-squad" target="_blank" rel="noopener noreferrer"><b>Wumpus Feedback Squad</b></a> program. Our goal there is to provide Discord valuable insights on new or current features as for instance the <a href="https://dis.gd/activities" target="_blank" rel="noopener noreferrer"><b>Discord Activities</b></a>.
+		<br>
+		<br>
+		When I'm not working on projects, I'm usually playing games with my friends, making music, doing sports, or working with our volunteer fire department and much more! :)
+		<br>
+		<br>
+		Feel free to <a href="/portfolio/#contact"><b>contact me</b></a> if you have any questions or want to work with me. I'm always open to new ideas and projects. (. ❛ ᴗ ❛.)
 	</p>
 	<hr>
 	<br>
@@ -212,7 +158,7 @@ const projects = filteredProjects;
 				></Projects>
         ))}
     </div>
-	
+	<Guestbook />
   </main>
   <Footer />
 </Layout>
@@ -222,6 +168,8 @@ const projects = filteredProjects;
 	:root {
 		scroll-behavior: smooth;
 	}
+	
+
 	main {
 		margin: auto;
 		padding: 1rem;
@@ -290,4 +238,77 @@ const projects = filteredProjects;
 		gap: 2rem;
 		padding: 0;
 	}
-</style>
+
+	
+	.introduction {
+		text-align: center;
+		margin-bottom: 10rem;
+	}
+	#typewriter {
+		font-size: 2.5rem;
+		margin-top: 1rem;
+	}
+	.nav-icons {
+		display: flex;
+		justify-content: center;
+		margin-top: 1rem;
+	}
+	.nav-icons a {
+		font-size: 2rem;
+		margin: 0 0.5rem;
+		color: white;
+	}
+	.nav-icons a {
+		color: #fff;
+		font-size: 2em;
+		margin: 0 0.5em;
+		text-decoration: none;
+		border-radius: 50%;
+		height: 2em;
+		width: 2em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.nav-icons #discord:hover {
+		color: #5865F2;
+		transform: scale(1.1);
+		transition: all ease-in-out 0.2s;
+		background-color: #fff;
+	}
+	.nav-icons #github:hover {
+		background-color: #fff;
+		color: #000000;
+		transform: scale(1.1);
+		transition: all ease-in-out 0.2s;
+	}
+	.nav-icons #email:hover {
+		background-color: #fff;
+		color: rgb(var(--accent-light));
+		transform: scale(1.1);
+		transition: all ease-in-out 0.2s;
+	}
+	.nav-icons #email {
+		transition: all ease-out 0.4s;
+	}
+	.nav-icons #github {
+		transition: all ease-out 0.4s;
+	}
+	.nav-icons #discord {
+		transition: all ease-out 0.4s;
+	}
+
+	@keyframes ease-out {
+		0% {
+			transform: scale(1);
+			}
+		100% {
+			transform: scale(1.1);
+			}
+				
+	}
+	#abt-text a{
+		color: white;
+		text-decoration: none;
+	}
+</style>	
