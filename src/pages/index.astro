@@ -2,8 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import Projects from '../components/Projects.astro';
 import projectdata from '../_data/projects.json';
+
+const filteredProjects = projectdata.filter(project => project.published);
+
 
 const frontendskills = [
   { name: 'HTML', color: '#ff3300' },
@@ -11,38 +15,35 @@ const frontendskills = [
   { name: 'JavaScript', color: '#fff700' },
   { name: 'React', color: '#61DBFB' },
   { name: 'Bootstrap', color: '#7952B3' },
-  { name: 'Sass', color: '#CD6799' }
+  { name: 'Tailwind CSS', color: '#06B6D4' },
+  { name: 'Next.js', color: '#eee' },
+  { name: 'Astro', color: '#FF3E00'},
 ];
 
 const backendskills = [
   { name: 'Node.js', color: '#68A063' },
   { name: 'Express.js', color: '#eee' },
   { name: 'MongoDB', color: '#47A248' },
-  { name: 'SQL', color: '#FFD700' },
-  { name: 'GraphQL', color: '#E10098' },
+  { name: 'MySQL', color: '#FFD700' },
   { name: 'REST', color: '#FF5733' }
 ];
 
 const techskills = [
   { name: 'Git', color: '#F34F29' },
-  { name: 'GitHub', color: '#181717' },
+  { name: 'GitHub', color: '#eee' },
   { name: 'VS Code', color: '#007ACC' },
-  { name: 'Heroku', color: '#430098' },
   { name: 'Netlify', color: '#00C7B7' },
-  { name: 'Vercel', color: '#000000' }
 ];
 
 const otherskills = [
   { name: 'Figma', color: '#F24E1E' },
-  { name: 'Adobe XD', color: '#FF61F6' },
-  { name: 'Photoshop', color: '#31A8FF' },
-  { name: 'Illustrator', color: '#FF9A00' },
-  { name: 'After Effects', color: '#D291FF' },
-  { name: 'Premiere Pro', color: '#EA77FF' }
+  { name: 'Video Editing', color: '#FF5733' },
+  { name: 'SEO', color: '#47A248' },
+  { name: 'Google Firebase', color: '#FFA000' }
 ];
 
 	
-const projects = projectdata;
+const projects = filteredProjects;
 
 ---
 
@@ -174,7 +175,7 @@ const projects = projectdata;
 			}
 		</style>
 	</div>
-	<h4>About me:</h4>
+	<h4 id="aboutme">About me:</h4>
 	<p>
 		I'm a ?? year old web developer from Germany. If you want to work with me, feel free to contact me.
 	</p>
@@ -198,13 +199,13 @@ const projects = projectdata;
 		skills={otherskills}
       />
     </ul>
-	<h2>Used in many projects... like:</h2>
+	<h2 id="projects">Used in many projects... like:</h2>
     <div class="projects">
         {projects.map((project) => (
             <Projects
 				projectname={project.projectname}
 				projectdescription={project.projectdescription}
-				technologies={project.technologies}
+				technologies={project.technologies.map((tech: any) => ({ ...tech, icon: "" }))}
 				projecttags={project.projecttags}
 				projectpreview={project.projectpreview}
 				projectlinks={project.projectlinks}
@@ -213,6 +214,7 @@ const projects = projectdata;
     </div>
 	
   </main>
+  <Footer />
 </Layout>
 
 

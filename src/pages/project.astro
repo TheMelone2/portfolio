@@ -3,26 +3,34 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import projectdata from '../_data/projects.astro';
+import projectdata from '../_data/projects.json';
 
 export const meta = {
   title: 'Projects',
   description: 'A collection of projects I have worked on.',
 };
-/** @type {import('@astrojs
- * /types').LoadParams} */
 export async function load() {
   return {
     projectdata,
   };
-}
-
-
-
-// check which project is being viewed and get the data for it ( get project from the url )
-const project = projectdata.projects.find((project: { slug: any; }) => project.slug === params.slug);
-
-
 
 ---
-
+<div>
+  <Header />
+  <Layout title="Projects">
+    <h1>Projects</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {projectdata.map((project) => (
+        <Card
+          title={project.title}
+          description={project.description}
+          image={project.image}
+          link={project.link}
+          key={project.title}
+        />
+      ))}
+    </div>
+  </Layout>
+  <Footer />
+  
+</div>

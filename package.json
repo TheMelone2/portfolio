@@ -4,12 +4,14 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "api": "node .\\src\\_api\\index.cjs",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.2.8"
+    "astro": "^4.2.8",
+    "express": "^4.18.3"
   }
 }

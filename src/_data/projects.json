@@ -17,10 +17,11 @@
         "projectlinks": {
             "github": "https://github.com/example/project1",
             "live": "https://example.com/project1-live"
-        }
+        },
+        "published": true
     },
     {
-        "projectname": "Sample Project 2",
+        "projectname": "Marie Curie Homepage",
         "projectid": "sampleproject2",
         "projectdescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat, nisl quis sodales pretium, magna nisl ullamcorper justo, vitae rhoncus lorem felis eget ante. In porttitor erat tincidunt pharetra maximus. Morbi tempor elit in dolor auctor euismod. Sed mauris elit, sagittis nec ante a, tincidunt blandit ex. Aliquam facilisis sem eget urna imperdiet consectetur aliquet ut leo. Phasellus ullamcorper porttitor sem et tincidunt. In feugiat magna est, ut eleifend eros laoreet ut. Etiam nec est diam. Cras sit amet molestie ex. Nam et consequat nulla. Etiam libero sapien, varius ut purus et, maximus consequat dolor. Praesent molestie nisi at augue malesuada hendrerit. Morbi consectetur dignissim nulla, in blandit tortor porttitor nec. Duis blandit urna faucibus nibh tempor, nec consectetur nibh convallis.",
         "technologies": [
@@ -36,6 +37,45 @@
         "projectlinks": {
             "github": "https://github.com/example/project2",
             "live": "https://example.com/project2-live"
-        }
+        },
+        "published": false
+    },
+    {
+        "projectname": "Motor Legend",
+        "projectid": "sampleproject3",
+        "projectdescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat, nisl quis sodales pretium, magna nisl ullamcorper justo, vitae rhoncus lorem felis eget ante. In porttitor erat tincidunt pharetra maximus. Morbi tempor elit in dolor auctor euismod. Sed mauris elit, sagittis nec ante a, tincidunt blandit ex. Aliquam facilisis sem eget urna imperdiet consectetur aliquet ut leo. Phasellus ullamcorper porttitor sem et tincidunt. In feugiat magna est, ut eleifend eros laoreet ut. Etiam nec est diam. Cras sit amet molestie ex. Nam et consequat nulla. Etiam libero sapien, varius ut purus et, maximus consequat dolor. Praesent molest",
+        "technologies": [
+            { "name": "React"},
+            { "name": "Node.js"},
+            { "name": "MongoDB"}
+        ],
+        "projecttags": [
+            { "name": "web development" },
+            { "name": "full stack"}
+        ],
+        "projectpreview": "https://example.com/project3-preview",
+        "projectlinks": {
+            "live": "https://example.com/project3-live"
+        },
+        "published": true
+    },
+    {
+        "projectname": "EasyThreads Documentation",
+        "projectid": "easythreadsdocs",
+        "projectdescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat, nisl quis sodales pretium, magna nisl ullamcorper justo, vitae rhoncus lorem felis eget ante. In porttitor erat tincidunt pharetra maximus. Morbi tempor elit in dolor auctor euismod. Sed mauris elit, sagittis nec ante a, tincidunt blandit ex. Aliquam facilisis sem eget urna imperdiet consectetur aliquet ut leo. Phasellus ullamcorper porttitor sem et tincidunt. In feugiat magna est, ut eleifend eros laoreet ut. Etiam nec est diam. Cras sit amet molestie ex. Nam et consequat nulla. Etiam libero sapien, varius ut purus et, maximus consequat dolor. Praesent molestie nisi at augue malesuada hendrerit. Morbi consectetur dignissim nulla, in blandit tortor porttitor nec. Duis blandit urna faucibus nibh tempor, nec consectetur nibh convallis.",
+        "technologies": [
+            { "name": "React"},
+            { "name": "Node.js"},
+            { "name": "MongoDB"}
+        ],
+        "projecttags": [
+            { "name": "web development" },
+            { "name": "full stack"}
+        ],
+        "projectpreview": "https://example.com/project4-preview",
+        "projectlinks": {
+            "live": "https://docs.easythreads.xyz"
+        },
+        "published": true
     }
 ]

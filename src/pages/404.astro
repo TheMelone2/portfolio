@@ -1,0 +1,55 @@
+--- 
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout title='404 - Page not found'>
+    <div class="container">
+        <h1>404 - Page not found</h1>
+        <p>Sorry, the page you are looking for does not exist.</p>
+        <button id="goback-btn">Go back</button>
+        <script>
+            const button = document.querySelector('button');
+            if (button) {
+                button.addEventListener('click', () => {
+                    window.location.href = '/';
+                });
+            }
+        </script>
+    </div>
+    <Footer />
+</Layout>
+<style>
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 80vh;
+        color: whitesmoke;
+    }
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+
+    #goback-btn{
+        background-color: #0dee58e0;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    #goback-btn:hover{
+        
+        box-shadow: 0 0 10px #0dee58e0;
+    }
+
+
+</style>
+

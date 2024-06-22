@@ -88,6 +88,7 @@ function getIconClass2(technologyName) {
         <button class="readall" onclick={`readall(${projectname})`}>Read all</button>
     </div>
     <div class="project-technologies">
+        <h4>Built  with :</h4>
         <ul>
             {technologies.map((technology) => (
                 <li>
@@ -98,12 +99,16 @@ function getIconClass2(technologyName) {
     </div>
     <hr>
     <div class="project-links">
-        <a href={projectlinks.github} target="_blank" rel="noopener noreferrer" id="link-gh">
-            <i class="fa fa-github"></i> View on GitHub 
-        </a>
-        <a href={projectlinks.live} target="_blank" rel="noopener noreferrer" id="link-live">
-            Live Preview <i class="fa fa-arrow-up-right-from-square"></i>
-        </a>
+        {projectlinks.github && (
+            <a href={projectlinks.github} target="_blank" rel="noopener noreferrer" id="link-gh">
+                <i class="fa fa-github"></i> View on GitHub 
+            </a>
+        )}
+        {projectlinks.live && (
+            <a href={projectlinks.live} target="_blank" rel="noopener noreferrer" id="link-live">
+                Live Preview <i class="fa fa-arrow-up-right-from-square"></i>
+            </a>
+        )}
     </div>
 
 </div>
@@ -156,10 +161,25 @@ function getIconClass2(technologyName) {
         margin-left: 0.5rem;
     }
 
+    .project-technologies h4 {
+        color: #ffffffa6;
+        margin-left: 3rem;
+        font-weight: 500;
+        margin-bottom: -1rem;
+    }
+
+
     .project-technologies ul li {
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        background-color: #33333349;
+        border: none;
+        font-size: 0.8rem;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 3px 5px;
     }
 
     .project-links {
