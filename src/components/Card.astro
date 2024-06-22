@@ -1,7 +1,7 @@
 ---
 interface Props {
   title: string;
-  skills: { name: string; color: string }[];
+  skills: { name: string; color: string; link?: string }[];
 }
 
 const { title, skills } = Astro.props;
@@ -65,11 +65,19 @@ function getIconClass(skillName) {
       {title}
     </h2>
     <ul>
-      {skills.map(skill => (
-        <li key={skill.name}>
-          <i class={getIconClass(skill.name)} style={{ color: skill.color }}></i> {skill.name}
-        </li>
-      ))}
+	{skills.map(skill => (
+		<li key={skill.name}>
+			{skill.link ? (
+				<a href={skill.link} target="_blank" rel="noopener noreferrer">
+					<i class={getIconClass(skill.name)} style={{ color: skill.color }}></i> {skill.name}
+				</a>
+			) : (
+				<>
+					<i class={getIconClass(skill.name)} style={{ color: skill.color }}></i> {skill.name}
+				</>
+			)}
+		</li>
+	))}
     </ul>
   </div>
 </li>
@@ -97,6 +105,10 @@ function getIconClass(skillName) {
 		background-color: #23262d;
 		opacity: 0.8;
 	}
+	.link-card a {
+		color: white;
+		text-decoration: none;	
+	}
 	h2 {
 		margin: 0;
 		font-size: 1.25rem;
@@ -106,12 +118,34 @@ function getIconClass(skillName) {
 		margin-top: 0.5rem;
 		margin-bottom: 0;
 	}
+
+	.link-card ul {
+		list-style: none;	
+	}
 	.link-card li:is(:hover, :focus-within) {
 		color: rgb(var(--accent-light));
-		cursor: pointer;
+		cursor: default;
+	}
+	.link-card:is(:hover, :focus-within) {
+		background-position: 0;
+		box-shadow: 0 0 0 2px rgb(var(--accent-dark)), 0 0 0 4px rgba(255, 255, 255, 0.1);
+		transform: scale(1.08);
+		z-index: 1;
+		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+			box-shadow 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+			transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+	.link-card:not(:hover) {
+		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+			box-shadow 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+			transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 	.link-card:is(:hover, :focus-within) h2 {
 		color: rgb(var(--accent-light));
-		cursor: default;
+
 	} 
+	.link-card a:hover {
+		color: rgb(var(--accent-light));
+		cursor: pointer;
+	}
 </style>
