@@ -1,0 +1,194 @@
+<div class="guestbook">
+    <h2>the guest book</h2>
+    <p>
+        Thanks for visiting this portfolio to this point! You can write an imaginary guest book entry. Leave your current thoughts, problems,... here. Don't worry I don't & cannot share it ❤️‍🩹
+        <br>
+        <br>
+        And remember you matter for me 😊
+    </p>
+    <form>
+        <textarea name="message" placeholder="Your message"></textarea>
+        <span id="chars-left"><span id="chars_left">585</span> characters left</span>
+        <button type="button" id="submit-btn" name="submit">Submit</button>
+    </form>
+    <hr>
+    <br>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        document.querySelector('textarea').addEventListener('input', function() {
+            if (this.value.length > 585) {
+                alert('Too long! You have only 585 characters for your message. Sorry!');
+                this.value = this.value.substring(0, 585);
+            }
+            document.getElementById('chars_left').innerText = String(585 - this.value.length);
+        });
+
+        document.getElementById('submit-btn').addEventListener('click', function() {
+            let message = document.querySelector('textarea').value;
+
+            if (message.length < 10) {
+                alert('Something went wrong: Your message is too short! You need at least 10 characters.');
+                return;
+            }
+
+            if (message.indexOf('<') !== -1 || message.indexOf('>') !== -1 || message.indexOf('script') !== -1) {
+                alert('Something went wrong: Your message is not valid!');
+                return;
+            }
+
+            const date = 
+                new Date().getFullYear() + '-' + 
+                (new Date().getMonth() + 1) + '-' + 
+                new Date().getDate() + ' ' + 
+                new Date().getHours() + ':' + 
+                new Date().getMinutes() + ':' + 
+                new Date().getSeconds();
+
+            const uniqueID = 
+                Math.random().toString(36).substring(2) + 
+                Math.random().toString(36).substring(2);
+            
+            const entry = document.createElement('div');
+            entry.className = 'guestbook-entry';
+            entry.id = uniqueID;
+
+            const entryHTML = `
+                <h3 id="date-text">${date}</h3>
+                <p id="entry-text">
+                    "${message}"
+                </p>
+                <button id="delete-btn">Delete</button>
+            `;
+
+            entry.innerHTML = entryHTML;
+            entry.querySelector('#delete-btn').addEventListener('click', () => deleteEntry(uniqueID));
+
+            localStorage.setItem(uniqueID, JSON.stringify({ date: date, message: message }));
+            document.querySelector('.guestbook').appendChild(entry);
+        });
+        const entries = Object.keys(localStorage).filter(key => key !== 'length');
+        
+        entries.forEach(entry => {
+            const data = JSON.parse(localStorage.getItem(entry));
+
+            const entryElement = document.createElement('div');
+            entryElement.className = 'guestbook-entry';
+            entryElement.id = entry;
+
+            const entryHTML = `
+                <h3 id="date-text">${data.date}</h3>
+                <p id="entry-text">
+                    "${data.message}"
+                </p>
+                <button id="delete-btn">Delete</button>
+            `;
+
+            entryElement.innerHTML = entryHTML;
+            entryElement.querySelector('#delete-btn').addEventListener('click', () => deleteEntry(entry));
+
+            document.querySelector('.guestbook').appendChild(entryElement);
+        });
+    });
+
+    function deleteEntry(id) {
+        document.getElementById(id).remove();
+        localStorage.removeItem(id);
+    }
+</script>
+
+<style is:global>
+    .guestbook {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .guestbook form {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .guestbook #chars-left {
+        margin: 10px;
+        font-size: 12px;
+    }
+
+    .guestbook h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .guestbook input[type="text"],
+    .guestbook input[type="email"],
+    .guestbook textarea {
+        width: 50%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        background-color: #23262d;
+        color: #fff;
+    }
+
+    .guestbook textarea {
+        height: 200px;
+        resize: none;
+    }
+
+    .guestbook button {
+        width: 53%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background: #333;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .guestbook button:hover {
+        background: #444;
+    }
+
+    .guestbook-entry {
+        width: 45%;
+        border-radius: 5px;
+        background: #333;
+        color: #fff;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .guestbook-entry #date-text {
+        margin: 10px;
+        font-size: 12px;
+    }
+
+    .guestbook-entry #entry-text {
+        margin: 10px;
+        font-size: 14px;
+    }
+
+    .guestbook-entry #delete-btn {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background: #444;
+        color: #fff;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+    .guestbook-entry #delete-btn:hover {
+        background: #555;
+    }
+</style>
