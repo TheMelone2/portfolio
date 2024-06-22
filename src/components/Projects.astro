@@ -1,17 +1,25 @@
 ---
 interface Props {
-        projectname: string;
-        projectdescription: string;
-        technologies: { name: string; icon: string, color: string }[];
-        projecttags: { name: string}[];
-        projectpreview: string;
-        projectlinks: {
-            github: string;
-            live: string;
-        };  
+    projectname: string;
+    projectdescription: string;
+    technologies: { name: string; icon: string, color: string }[];
+    projecttags: { name: string }[];
+    projectpreview: string;
+    projectlinks: {
+        github: string;
+        live: string;
+    };  
 }
 
-const { projectname, projectdescription, technologies, projecttags, projectpreview, projectlinks } = Astro.props;
+// Füge Standardwerte hinzu, falls die Props nicht definiert sind
+const { 
+    projectname = '', 
+    projectdescription = '', 
+    technologies = [], 
+    projecttags = [], 
+    projectpreview = '', 
+    projectlinks = { github: '', live: '' } 
+} = Astro.props;
 
 function getIconClass(tagName: string) {
   switch (tagName) {
@@ -31,9 +39,8 @@ function getIconClass(tagName: string) {
         return 'fas fa-gamepad';
     case 'data science':
         return 'fas fa-chart-line';
-    default :
+    default:
         return 'fas fa-code';
-
   }
 }
 
@@ -51,14 +58,14 @@ function getIconClass2(technologyName) {
       return 'fab fa-bootstrap';
     case 'Sass':
       return 'fab fa-sass';
-	case 'Node.js':
-		return 'fab fa-node-js';
-	case 'Express.js':
-		return 'fas fa-server';
-	case 'MongoDB':
-		return 'fas fa-database';
-	case 'Git':
-		return 'fab fa-git-alt';
+    case 'Node.js':
+      return 'fab fa-node-js';
+    case 'Express.js':
+      return 'fas fa-server';
+    case 'MongoDB':
+      return 'fas fa-database';
+    case 'Git':
+      return 'fab fa-git-alt';
     default:
       return '';
   }
@@ -88,7 +95,7 @@ function getIconClass2(technologyName) {
         <button class="readall" onclick={`readall(${projectname})`}>Read all</button>
     </div>
     <div class="project-technologies">
-        <h4>Built  with :</h4>
+        <h4>Built with :</h4>
         <ul>
             {technologies.map((technology) => (
                 <li>
@@ -110,8 +117,8 @@ function getIconClass2(technologyName) {
             </a>
         )}
     </div>
-
 </div>
+
 
 <style>
     .project {
