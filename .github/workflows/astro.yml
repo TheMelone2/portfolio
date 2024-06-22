@@ -31,6 +31,9 @@ jobs:
           path: .
           node-version: 20
           package-manager: npm@latest
+        
+        env: 
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL}}
 
   deploy:
     needs: build
