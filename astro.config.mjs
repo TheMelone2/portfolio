@@ -5,8 +5,4 @@ import node from '@astrojs/node';
 export default defineConfig({
     site: 'https://themelone2.github.io',
     base: 'portfolio',
-    output: 'server',
-    adapter: node({
-      mode: 'standalone',
-    }),
 })
