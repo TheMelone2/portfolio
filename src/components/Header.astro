@@ -7,7 +7,7 @@
     </nav>
     <nav class="navlinks right">
         <a href="https://github.com/TheMelone2/portfolio" target="_blank" id="nav-github"><i class="fab fa-github"></i> Visit on GitHub</a>
-        <a href="/portfolio/#contact" id="nav-contact"><i class="fa fa-paper-plane"></i> Get in Touch</a>       
+        <a href="mailto:melon@easysystems.live" id="nav-contact"><i class="fa fa-paper-plane"></i> Get in Touch</a>       
     </nav>
 </div>
 <style>
@@ -141,5 +141,20 @@
         background: linear-gradient(90deg, rgb(80, 255, 153) 0%, rgba(1, 255, 43, 0.596) 100%);
         background-size: 200% 200%;
         animation: gradient 3s ease infinite;
+    }
+
+    /* Mobile respomsive */
+    @media only screen and (max-width: 600px) {
+        .nav {
+            height: 4em;
+        }
+        .navlinks.left a {
+            font-size: 10px;
+        }
+        .navlinks.right a {
+            font-size: 10px;
+            height: 1.8em;
+            width: 5em;
+        }
     }
 </style>

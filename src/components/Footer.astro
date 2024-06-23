@@ -5,9 +5,10 @@
           <li>Email: <a href="mailto:melon@easysystems.live">melon@easysystems.live</a></li>
           <li><a href="https://github.com/TheMelone2" target="_blank"><i class="fa fa-github"></i> Github</a></li>
         </ul>
-      </div>
-      <p>
-        Made with <i class="fa fa-heart" style="color: red;"></i> by the.melon © {new Date().getFullYear()}
+    </div>
+    <a href="https://easysystems.live/legal" id="legal-link"><i class="fa fa-balance-scale"></i> Legal Links</a>
+    <p>
+      Made with <i class="fa fa-heart" style="color: red;"></i> by the.melon © {new Date().getFullYear()}
     </p>
 </footer>
 
@@ -17,9 +18,17 @@ footer {
     font-family: Menlo, monospace;
 }
 footer p {
-    text-align: center;
-    font-size: 0.9rem;
-    margin-bottom: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+footer #legal-link {
+  display: block;
+  font-size: 0.9rem;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+
 }
 ul {
     display: inline-grid;
@@ -37,13 +46,13 @@ ul {
   }
 }
 
-a {
+footer div a {
     color: white;
     text-decoration: none;
     box-shadow: inset 0 -1px 0 hsla(133, 69%, 53%, 0.4);
 }
 
-a:hover {
+footer div a:hover {
     box-shadow: inset 0 -1.2em 0 hsla(133, 98%, 51%, 0.4);
 }
 

@@ -56,8 +56,28 @@ const projects = filteredProjects;
 		<h1 id="name">Hey! I'm<br><span class="text-gradient">the.melon</span></h1>
 		<br>
 		<p id="typewriter"><i class="fa fa-arrow-right"></i> <span class="welcome-text"></span> <i class="fa fa-arrow-left"></i></p>
+		<style>
+		@media (max-width: 600px) {
+
+			main {
+				font-size: 16px;
+				margin-top: 2rem;
+			}
+			#name {
+				font-size: 3rem;
+			}
+			.text-gradient {
+				font-size: 4rem;
+			}
+			#typewriter {
+				font-size: 1.5rem;
+			}
+			#aboutme {
+				margin-top: 65%;
+			}
+		}
+		</style>
 		<script>
-			// Cool typewriter effect
 			const words = ["Welcome to my portfolio!", "I'm a web developer from Germany.", "I'm a Web Designer.", "I'm a Product Tester.", "I'm a melon? :O"];
 			let i = 0;
 			let j = 0;
@@ -164,12 +184,11 @@ const projects = filteredProjects;
 </Layout>
 
 
-<style>
+<style is:global>
 	:root {
 		scroll-behavior: smooth;
 	}
 	
-
 	main {
 		margin: auto;
 		padding: 1rem;
