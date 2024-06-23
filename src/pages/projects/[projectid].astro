@@ -29,7 +29,7 @@ const project: {
     <h1>Project: {project.projectname as string}</h1>
     <ul id="btns">
       <li>
-        <button id="back-btn">Back to Projects</button>
+        <button id="back-btn" onclick="window.location.href = '/portfolio#projects'">Back to Projects</button>
       </li>
       {project.projectlinks?.github && (
         <li>
@@ -62,7 +62,7 @@ const project: {
         <br>
       ) : (
         <p>
-          Due to various reasons I can't share this source code. Sorry! But you can view the live product instead.
+          Due to various reasons I can't share this source code. Sorry! But you might can view the live product instead.
         </p>
       )}
     </div>
