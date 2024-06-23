@@ -71,10 +71,48 @@ function getIconClass2(technologyName) {
   }
 }
 ---
+<script>
+    const projectpreviews = document.querySelectorAll('.project-preview img');
+    const imageoverlay = document.querySelector('.image-overlay') as HTMLElement;
+
+    projectpreviews.forEach((projectpreview) => {
+        projectpreview.addEventListener('click', () => {
+            imageoverlay.style.display = 'block';
+            (projectpreview as HTMLElement).style.position = 'fixed';
+            (projectpreview as HTMLElement).style.transition = 'all 0.5s ease';
+            (projectpreview as HTMLElement).style.top = '50%';
+            (projectpreview as HTMLElement).style.left = '50%';
+            (projectpreview as HTMLElement).style.transform = 'translate(-50%, -50%)';
+            (projectpreview as HTMLElement).style.zIndex = '1000';
+            (projectpreview as HTMLElement).style.width = '80%';
+            (projectpreview as HTMLElement).style.maxWidth = '800px';
+            (projectpreview as HTMLElement).style.borderRadius = '10px';
+            (projectpreview as HTMLElement).style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';
+        });
+    });
+
+    imageoverlay.addEventListener('click', () => {
+        imageoverlay.style.display = 'none';
+        projectpreviews.forEach((projectpreview) => {
+            (projectpreview as HTMLElement).style.transition = 'all 0.5s ease';
+            (projectpreview as HTMLElement).style.position = 'static';
+            (projectpreview as HTMLElement).style.top = 'auto';
+            (projectpreview as HTMLElement).style.left = 'auto';
+            (projectpreview as HTMLElement).style.transform = 'none';
+            (projectpreview as HTMLElement).style.zIndex = 'auto';
+            (projectpreview as HTMLElement).style.width = '100%';
+            (projectpreview as HTMLElement).style.maxWidth = '300px';
+            (projectpreview as HTMLElement).style.borderRadius = '10px';
+            (projectpreview as HTMLElement).style.boxShadow = 'none';
+        });
+    });
+</script>
 
 <div class="project">
     <h2>{projectname}</h2>
-    <hr>
+    <div class="project-preview">
+        <img src={projectpreview} alt={projectname} id={projectname} />
+    </div>
     <div class="project-short-infos">
         <div class="project-tags">
             <ul>
@@ -85,10 +123,9 @@ function getIconClass2(technologyName) {
                 ))}
             </ul>
         </div>
-        <div class="project-preview">
-            <img src={projectpreview} alt={projectname} />
-        </div>
     </div>
+    <div class="image-overlay"></div>
+    <hr>
     <br>
     <div class="project-description">
         <p Id="text">{projectdescription}</p>
@@ -151,12 +188,54 @@ function getIconClass2(technologyName) {
         gap: 0.5rem;
     }
 
+    .project-preview {
+        float: right;
+        margin-left: 1rem;
+        box-shadow: 0 0 10px rgb(var(--accent-light));
+        margin-top: -5rem;
+    }
+
     .project-preview img {
         width: 100%;
         max-width: 300px;
+        transition: all 0.5s ease;
+        cursor: pointer;
         border-radius: 10px;
     }
 
+    .image-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #0000009e;
+        z-index: 999;
+        display: none;
+    }
+
+    .project-description p {
+        color: #ffffffa6;
+    }
+
+    /* smooth fade Big and small animation */
+    @keyframes imgSizeUp {
+        0% {
+            transform: scale(0.5);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes imgSizeDown {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(0.5);
+        }
+    }
     .project-description {
         margin-left: 3rem;
         color: #ffffff8f;
