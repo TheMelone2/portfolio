@@ -201,7 +201,7 @@ const projects = filteredProjects;
 			</tr>
 			{contributionsdata.map((contribution) => (
 				<tr>
-					<td><b><a href={contribution.serverinvite}>{contribution.name}</a></b><br> <span class="community_size">{contribution.size}</span> </td>
+					<td id="head"><b><a href={contribution.serverinvite}>{contribution.name}</a></b><br> <span class="community_size">{contribution.size}</span> </td>
 					<td><b>{contribution.role}</b>: {contribution.role_description}</td>
 					<td>{contribution.time}</td>
 				</tr>

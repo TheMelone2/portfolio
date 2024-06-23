@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Keycord",
+        "description": "Comprehensive Discord Support & Help run by Discord users, for Discord users.",
+        "serverinvite": "https://discord.gg/discord-world-unofficial-discord-help-discord-832668397635764234",
+        "size": "2.200+ Community Members",
+        "role": "Moderator",
+        "role_description": "As a Community Moderator, I'm responsible for moderating the community and helping users.",
+        "time": "09/16/2023 - present"
+    },
+    {
+        "name": "Motor Legend",
+        "description": "Motor Legend is a german bike game - currently discontinued.",
+        "serverinvite": "https://discord.gg/motor-legend-964605436768694302",
+        "size": "1.100+ Community Members",
+        "role": "Administrator",
+        "role_description": "As an administrator, I'm responsible for managing the community and supporting users..",
+        "time": "06/26/2022 - present"
+   },
+   {
+        "name": "Gaming Deutschland",
+        "description": "Gaming Deutschland combines the german gaming community - from avarage players to pro players everyone is welcome!",
+        "serverinvite": "https://discord.gg/gaming-deutschland-867915973150253066",
+        "size": "2.600+ Community Members",
+        "role": "Manager",
+        "role_description": "As a manager, I'm responsible for organizing and managing the community and supporting users.",
+        "time": "08/09/2022 - present"
+   }
+
+]

@@ -43,3 +43,9 @@ a {
     font-weight: 600;
 }
 </style>
+<script>
+    // if hover on #head show {contribution.description} as tooltip
+    document.getElementById('head').addEventListener('mouseover', function() {
+        document.getElementById('head').title = '{contribution.description}';
+    });
+</script>
