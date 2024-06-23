@@ -1,0 +1,45 @@
+---
+// Import the properties from the interface definition
+interface Props {
+    name: string;
+    description: string;
+    serverinvite: string;
+    size: string;
+    role: string;
+    role_description: string;
+    time: string;
+}
+
+const {
+    name = '',
+    description = '',
+    serverinvite = '',
+    size = '',
+    role = '',
+    role_description = '',
+    time = ''
+} = Astro.props;
+---
+
+<style is:global>
+table {
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    width: 100%;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+a {
+    color: rgb(var(--accent-light));
+    text-decoration: none;
+}
+
+.community_size {
+    font-size: 10px;
+    font-weight: 600;
+}
+</style>
