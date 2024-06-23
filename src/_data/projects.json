@@ -4,16 +4,16 @@
         "projectid": "easytheadsweb",
         "projectdescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat, nisl quis sodales pretium, magna nisl ullamcorper justo, vitae rhoncus lorem felis eget ante. In porttitor erat tincidunt pharetra maximus. Morbi tempor elit in dolor auctor euismod. Sed mauris elit, sagittis nec ante a, tincidunt blandit ex. Aliquam facilisis sem eget urna imperdiet consectetur aliquet ut leo. Phasellus ullamcorper porttitor sem et tincidunt. In feugiat magna est, ut eleifend eros laoreet ut. Etiam nec est diam. Cras sit amet molestie ex. Nam et consequat nulla. Etiam libero sapien, varius ut purus et, maximus consequat dolor. Praesent molestie nisi at augue malesuada hendrerit. Morbi consectetur dignissim nulla, in blandit tortor porttitor nec. Duis blandit urna faucibus nibh tempor, nec consectetur nibh convallis.",
         "technologies": [
-            { "name": "HTML", "color": "#ff3300" },
-            { "name": "CSS", "color": "#2071fe"},
-            { "name": "JavaScript", "color": "#fff700" },
-            { "name": "React", "color": "#61DBFB" }
+            { "name": "HTML"},
+            { "name": "CSS"},
+            { "name": "JavaScript"},
+            { "name": "React" }
         ],
         "projecttags": [
             { "name": "web development"},
             { "name": "frontend"}
         ],
-        "projectpreview": "https://example.com/project1-preview",
+        "projectpreview": "../../public/EasyThreads_Web_Test.png",
         "projectlinks": {
             "github": "https://github.com/example/project1",
             "live": "https://example.com/project1-live"
@@ -33,27 +33,28 @@
             { "name": "web development" },
             { "name": "full stack"}
         ],
-        "projectpreview": "https://example.com/project4-preview",
+        "projectpreview": "../../public/PersonalPortfolio.png",
         "projectlinks": {
             "live": "https://docs.easythreads.xyz"
         },
         "published": true
     }, 
     {
-        "projectname": "Portfolio",
+        "projectname": "Personal Portfolio",
         "projectid": "melon-portfolio",
-        "projectdescription": "Lorem ipsum dolor sit amet, conse.",
+        "projectdescription": "This is my personal portfolio. If you're reading this, chances are you're looking at my portfolio! 🥹 It's an AstroJS-built application. The website is fully responsive, and the source code is on GitHub. I picked AstroJS as the framework because I wanted to learn something new. This way, I have a live project where I can test my learning curve with Astro.",
         "technologies": [
-            { "name": "Node.js" },
-            { "name": "Express" },
-            { "name": "MongoDB" }
+            { "name": "AstroJS" },
+            { "name": "JavaScript" },
+            { "name": "CSS" }
         ],
         "projecttags": [
             { "name": "web development" }
         ],
-        "projectpreview": "https://example.com/project3-preview",
+        "projectpreview": "../../public/PersonalPortfolio.png",
         "projectlinks": {
-            "github": "https://github.com/TheMelone2/portfolio"
+            "github": "https://github.com/TheMelone2/portfolio",
+            "live": "https://themelone2.github.io/portfolio"
         },
         "published": true
     }
