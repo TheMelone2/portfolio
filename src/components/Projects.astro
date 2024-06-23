@@ -70,7 +70,8 @@ function getIconClass2(technologyName) {
         return 'fas fa-rocket';
     case 'TypeScript':
         return 'lni lni-typescript';
-
+    case 'ExpressJS':
+        return 'fas fa-server';
     default:
       return '';
   }
@@ -327,5 +328,35 @@ function getIconClass2(technologyName) {
     /*  cool animation  for hover */
     .readall:hover {
         background-color: #444; 
+    }
+
+    @media (max-width: 768px) {
+        /* Make project image over the project tags */
+        .project-preview {
+            margin-top: -0.2rem;
+        }
+        .project-short-infos {
+            margin-top: 10em;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .project-tags ul {
+            flex-direction:row;
+            align-items: center;
+        }
+
+        .project-technologies {
+            height: auto;
+        }
+
+        .project-technologies ul{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.5rem;
+            justify-content: center;
+            font-size: smaller;
+            width: 70%;
+        }
     }
 </style>
