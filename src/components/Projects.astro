@@ -1,6 +1,7 @@
 ---
 interface Props {
     projectname: string;
+    projectid: string;
     projectdescription: string;
     technologies: { name: string; icon: string, color: string }[];
     projecttags: { name: string }[];
@@ -10,10 +11,9 @@ interface Props {
         live: string;
     };  
 }
-
-// Füge Standardwerte hinzu, falls die Props nicht definiert sind
 const { 
     projectname = '', 
+    projectid = '',
     projectdescription = '', 
     technologies = [], 
     projecttags = [], 
@@ -66,6 +66,11 @@ function getIconClass2(technologyName) {
       return 'fas fa-database';
     case 'Git':
       return 'fab fa-git-alt';
+    case 'Astro':
+        return 'fas fa-rocket';
+    case 'TypeScript':
+        return 'lni lni-typescript';
+
     default:
       return '';
   }
@@ -106,6 +111,13 @@ function getIconClass2(technologyName) {
             (projectpreview as HTMLElement).style.boxShadow = 'none';
         });
     });
+    const buttons = document.querySelectorAll('button.readall');
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const projectid = button.id;
+                window.location.href = `/portfolio/projects/${projectid}`;
+            });
+        });
 </script>
 
 <div class="project">
@@ -128,8 +140,8 @@ function getIconClass2(technologyName) {
     <hr>
     <br>
     <div class="project-description">
-        <p Id="text">{projectdescription}</p>
-        <button class="readall" onclick={`readall(${projectname})`}>Read all</button>
+        <p id="text">{projectdescription.slice(0, 110)}{projectdescription.length > 110 ? '...' : ''}</p>
+        <button class="readall" id={projectid} onclick="readall()">Read all</button>
     </div>
     <div class="project-technologies">
         <h4>Built with :</h4>
