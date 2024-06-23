@@ -14,10 +14,9 @@
             { "name": "web development" },
             { "name": "frontend" }
         ],
-        "projectpreview": "./EasyThreads_Web_Test.png",
+        "projectpreview": "https://themelone2.github.io/portfolio/EasyThreads_Web_Test.png",
         "projectlinks": {
-            "github": "https://github.com/example/project1",
-            "live": "https://example.com/project1-live"
+            "live": "https://easythreads.xyz"
         },
         "published": true
     },
@@ -34,7 +33,7 @@
             { "name": "web development" },
             { "name": "full stack" }
         ],
-        "projectpreview": "./PersonalPortfolio.png",
+        "projectpreview": "https://themelone2.github.io/portfolio/easythreads_docs_preview.png",
         "projectlinks": {
             "live": "https://docs.easythreads.xyz"
         },
@@ -53,7 +52,7 @@
         "projecttags": [
             { "name": "web development" }
         ],
-        "projectpreview": "./PersonalPortfolio.png",
+        "projectpreview": "https://themelone2.github.io/portfolio/PersonalPortfolio.png",
         "projectlinks": {
             "github": "https://github.com/TheMelone2/portfolio",
             "live": "https://themelone2.github.io/portfolio"
