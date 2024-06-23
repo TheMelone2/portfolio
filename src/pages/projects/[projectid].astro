@@ -1,0 +1,165 @@
+---
+import projectdata from '../../_data/projects.json';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const filteredProjects = projectdata.filter(project => project.published);
+  const projectIds = filteredProjects.map(project => project.projectid);
+  
+  return projectIds.map(projectid => ({
+    params: { projectid }
+  }));
+}
+
+const { projectid } = Astro.params || {};
+const project: {
+[x: string]: unknown; github?: string; livepreviewlink?: string; technologies?: { name: string }[]; projectid: string; projectname: string; projectdescription: string; published: boolean; projectlinks?: { github?: string; live?: string } }
+ = projectdata.find(project => project.projectid === projectid) || {
+   projectid: '',
+   projectname: '',
+   projectdescription: '',
+   published: false
+ };
+---
+<Layout title={project.projectname}>
+  <Header />
+  <div class="main">
+    <h1>Project: {project.projectname as string}</h1>
+    <ul id="btns">
+      <li>
+        <button id="back-btn">Back to Projects</button>
+      </li>
+      {project.projectlinks?.github && (
+        <li>
+          <a id="gh-btn" href={project.projectlinks.github} target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View Github</a>
+        </li>
+      )}
+      {project.projectlinks?.live && (
+        <li>
+          <a id="lv-btn" href={project.projectlinks?.live} target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> View Live Preview</a>
+        </li>
+      )}
+    </ul>
+    <img src={project.projectpreview} alt={project.projectname} id={project.projectname} />
+    <h2>Description:</h2>
+    <div>
+      <p>{project.projectdescription}</p>
+    </div>
+    <h2>Technologies used in this project:</h2>
+    <ul>
+      {project.technologies?.map(technology => (
+        <li key={technology.name}>{technology.name}</li>
+      ))}
+    </ul>
+    <h2>Source Code:</h2>
+    <div>
+      {project.projectlinks?.github ? (
+        <a href={project.projectlinks.github} target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Click to view the source code on Github
+        </a>
+        <br>
+        <br>
+      ) : (
+        <p>
+          Due to various reasons I can't share this source code. Sorry! But you can view the live product instead.
+        </p>
+      )}
+    </div>
+  <Footer />
+</Layout>
+
+<style>
+  div.main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  h1 {
+    text-align: center;
+    margin-top: 3rem;
+    color: #eee;
+  }
+
+  h2 {
+    color: #eee;
+  }
+
+  p {
+    color: #eeeeeeb7;
+  }
+
+  img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 10px rgb(var(--accent-light));
+    border-radius: 10px;
+  }
+
+  ul#btns {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: -1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  li {
+    margin: 0.5rem;
+  }
+
+  button#back-btn {
+    background-color: #2e2e2e86;
+    color: rgba(255, 255, 255, 0.863);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button#back-btn:hover {
+    background-color: #2e2e2e;
+  }
+
+ #gh-btn {
+    background-color: #2e2e2e;
+    color: rgb(255, 255, 255);
+    border: none;
+    font-size: 13px;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #gh-btn:hover {
+    background-color: #2e2e2e86;
+  }
+
+  #lv-btn {
+    background-color: rgb(var(--accent-dark));
+    color: rgb(255, 255, 255);
+    border: none;
+    font-size: 13px;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+
+  
+</style>
