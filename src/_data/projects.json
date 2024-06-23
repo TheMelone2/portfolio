@@ -2,16 +2,17 @@
     {
         "projectname": "EasyThreads Website",
         "projectid": "easytheadsweb",
-        "projectdescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat, nisl quis sodales pretium, magna nisl ullamcorper justo, vitae rhoncus lorem felis eget ante. In porttitor erat tincidunt pharetra maximus. Morbi tempor elit in dolor auctor euismod. Sed mauris elit, sagittis nec ante a, tincidunt blandit ex. Aliquam facilisis sem eget urna imperdiet consectetur aliquet ut leo. Phasellus ullamcorper porttitor sem et tincidunt. In feugiat magna est, ut eleifend eros laoreet ut. Etiam nec est diam. Cras sit amet molestie ex. Nam et consequat nulla. Etiam libero sapien, varius ut purus et, maximus consequat dolor. Praesent molestie nisi at augue malesuada hendrerit. Morbi consectetur dignissim nulla, in blandit tortor porttitor nec. Duis blandit urna faucibus nibh tempor, nec consectetur nibh convallis.",
+        "projectdescription": "The EasyThreads website includes a dashboard, a main page and much more. The backend is written in Javascript (NodeJS & ExpressJS), just like the frontend. We use mustache as a template engine to create dynamic pages. We use MongoDB for our database. On this project you can change various settings of your EasyThreads (Discord app) in real time and apply it directly to your Discord server. One of the biggest challenge is create an safe infrastructure to ensure customer safety.",
         "technologies": [
-            { "name": "HTML"},
-            { "name": "CSS"},
-            { "name": "JavaScript"},
-            { "name": "React" }
+            { "name": "JavaScript", "color": "#F7DF1E" },
+            { "name": "ExpressJS", "color": "#000000" },
+            { "name": "Node.js", "color": "#68A063" },
+            { "name": "MongoDB", "color": "#47A248" },
+            { "name": "CSS", "color": "#1572B6" }
         ],
         "projecttags": [
-            { "name": "web development"},
-            { "name": "frontend"}
+            { "name": "web development" },
+            { "name": "frontend" }
         ],
         "projectpreview": "../../public/EasyThreads_Web_Test.png",
         "projectlinks": {
@@ -23,30 +24,31 @@
     {
         "projectname": "EasyThreads Documentation",
         "projectid": "easythreadsdocs",
-        "projectdescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat, nisl quis sodales pretium, magna nisl ullamcorper justo, vitae rhoncus lorem felis eget ante. In porttitor erat tincidunt pharetra maximus. Morbi tempor elit in dolor auctor euismod. Sed mauris elit, sagittis nec ante a, tincidunt blandit ex. Aliquam facilisis sem eget urna imperdiet consectetur aliquet ut leo. Phasellus ullamcorper porttitor sem et tincidunt. In feugiat magna est, ut eleifend eros laoreet ut. Etiam nec est diam. Cras sit amet molestie ex. Nam et consequat nulla. Etiam libero sapien, varius ut purus et, maximus consequat dolor. Praesent molestie nisi at augue malesuada hendrerit. Morbi consectetur dignissim nulla, in blandit tortor porttitor nec. Duis blandit urna faucibus nibh tempor, nec consectetur nibh convallis.",
+        "projectdescription": "The EasyThreads documentation is based on Facebook's open source project 'Docusaurus' - an optimized page generator built in React. For this project, I customized Docusaurus to create a better user experience. I created custom components and much more to make the documentation of the Discord app more accessible to everyone.",
         "technologies": [
-            { "name": "React"},
-            { "name": "Node.js"},
-            { "name": "MongoDB"}
+            { "name": "React", "color": "#61DAFB" },
+            { "name": "TypeScript", "color": "#007ACC" },
+            { "name": "CSS", "color": "#1572B6" }
         ],
         "projecttags": [
             { "name": "web development" },
-            { "name": "full stack"}
+            { "name": "full stack" }
         ],
         "projectpreview": "../../public/PersonalPortfolio.png",
         "projectlinks": {
             "live": "https://docs.easythreads.xyz"
         },
         "published": true
-    }, 
+    },
     {
         "projectname": "Personal Portfolio",
         "projectid": "melon-portfolio",
         "projectdescription": "This is my personal portfolio. If you're reading this, chances are you're looking at my portfolio! 🥹 It's an AstroJS-built application. The website is fully responsive, and the source code is on GitHub. I picked AstroJS as the framework because I wanted to learn something new. This way, I have a live project where I can test my learning curve with Astro.",
         "technologies": [
-            { "name": "AstroJS" },
-            { "name": "JavaScript" },
-            { "name": "CSS" }
+            { "name": "Astro", "color": "#FF0080" },
+            { "name": "JavaScript", "color": "#F7DF1E" },
+            { "name": "TypeScript", "color": "#007ACC" },
+            { "name": "CSS", "color": "#1572B6" }
         ],
         "projecttags": [
             { "name": "web development" }
