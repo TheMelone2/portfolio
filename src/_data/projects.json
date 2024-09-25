@@ -1,29 +1,8 @@
 [
     {
-        "projectname": "EasyThreads Website",
-        "projectid": "easytheadsweb",
-        "projectdescription": "The EasyThreads website includes a dashboard, a main page and much more. The backend is written in Javascript (NodeJS & ExpressJS), just like the frontend. We use mustache as a template engine to create dynamic pages. We use MongoDB for our database. On this project you can change various settings of your EasyThreads (Discord app) in real time and apply it directly to your Discord server. One of the biggest challenge is create an safe infrastructure to ensure customer safety.",
-        "technologies": [
-            { "name": "JavaScript", "color": "#F7DF1E" },
-            { "name": "ExpressJS", "color": "#000000" },
-            { "name": "Node.js", "color": "#68A063" },
-            { "name": "MongoDB", "color": "#47A248" },
-            { "name": "CSS", "color": "#1572B6" }
-        ],
-        "projecttags": [
-            { "name": "web development" },
-            { "name": "frontend" }
-        ],
-        "projectpreview": "https://themelone2.github.io/portfolio/EasyThreads_Web_Test.png",
-        "projectlinks": {
-            "live": "https://easythreads.xyz"
-        },
-        "published": true
-    },
-    {
-        "projectname": "EasyThreads Documentation",
-        "projectid": "easythreadsdocs",
-        "projectdescription": "The EasyThreads documentation is based on Facebook's open source project 'Docusaurus' - an optimized page generator built in React. For this project, I customized Docusaurus to create a better user experience. I created custom components and much more to make the documentation of the Discord app more accessible to everyone.",
+        "projectname": "EasySystems Documentation",
+        "projectid": "easysystemsdocs",
+        "projectdescription": "The EasySystems documentation is based on Facebook's open source project 'Docusaurus' - an optimized page generator built in React. For this project, I customized Docusaurus to create a better user experience. I created custom components and much more to make the documentation of the Discord app more accessible to everyone. Now I'm manage this opensource project.",
         "technologies": [
             { "name": "React", "color": "#61DAFB" },
             { "name": "TypeScript", "color": "#007ACC" },
@@ -33,9 +12,10 @@
             { "name": "web development" },
             { "name": "full stack" }
         ],
-        "projectpreview": "https://themelone2.github.io/portfolio/easythreads_docs_preview.png",
+        "projectpreview": "https://themelone.live/eaasystems_docs_preview.png",
         "projectlinks": {
-            "live": "https://docs.easythreads.xyz"
+            "live": "https://docs.easysystems.live",
+            "github": "https://github.com/Easy-Systems/documentations"
         },
         "published": true
     },
@@ -52,10 +32,10 @@
         "projecttags": [
             { "name": "web development" }
         ],
-        "projectpreview": "https://themelone2.github.io/portfolio/PersonalPortfolio.png",
+        "projectpreview": "https://themelone.live/PersonalPortfolio.png",
         "projectlinks": {
             "github": "https://github.com/TheMelone2/portfolio",
-            "live": "https://themelone2.github.io/portfolio"
+            "live": "https://themelon.live"
         },
         "published": true
     }
