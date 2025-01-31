@@ -42,7 +42,7 @@ const project: {
         </li>
       )}
     </ul>
-    <img src={project.projectpreview} alt={project.projectname} id={project.projectname} />
+    <img src={project.projectpreview as string} alt={project.projectname} id={project.projectname} />
     <h2>Description:</h2>
     <div>
       <p>{project.projectdescription}</p>
@@ -50,7 +50,7 @@ const project: {
     <h2>Technologies used in this project:</h2>
     <ul>
       {project.technologies?.map(technology => (
-        <li key={technology.name}>{technology.name}</li>
+        <li>{technology.name}</li>
       ))}
     </ul>
     <h2>Source Code:</h2>
